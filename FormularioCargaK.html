@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+      Cotizador de sobres
+    </title>
+</head>
+
+<body style="text-align:center;" id="body">
+    <h1 style="color:green;">
+            Cotizador de carga base
+        </h1>
+    Peso por kg: <input id="peso" type="number">
+
+    <button onclick="go()">
+        Cotizar
+    </button>
+
+    <br>
+    <br>
+    <h1 id="precio"> </h1>
+    <p id="error"> </p>
+
+    <script>
+        var inputT = document.getElementById("precio");
+        var pesoKg = document.querySelector("input");
+        var txterror =document.getElementById("error");
+
+        function go() {
+            if (pesoKg.value<5000 && pesoKg.value>0){
+            inputT.innerHTML = "El costo seria de " + pesoKg.value*0.45  + " soles + IGV";
+            }
+            else if (pesoKg.value<10000 && pesoKg.value>5000){
+              inputT.innerHTML = "El costo seria de " + pesoKg.value*0.40  + " soles + IGV";
+            }
+            else if (pesoKg.value<15000 && pesoKg.value>10000){
+              inputT.innerHTML = "El costo seria de " + pesoKg.value*0.38  + " soles + IGV";
+            }
+            else if (pesoKg.value>15000 ){
+              inputT.innerHTML = "El costo seria de " + pesoKg.value*0.30  + " soles + IGV";
+            }
+            //else if (pesoKg.value<0){
+              //inputT.innerHTML = " Error = No se pueden poner pesos menores a 0";
+
+            //}
+            //if(document.getElementById("peso").value==""){
+              //txterror.innerHTML="Debe rellenar el campo de peso";
+            //}
+        }
+
+    </script>
+</body>
+</html>

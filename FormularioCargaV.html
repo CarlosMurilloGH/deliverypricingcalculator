@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+      Cotizador de sobres
+    </title>
+</head>
+
+<body style="text-align:center;" id="body">
+    <h1 style="color:green;">
+            Cotizador de carga volumetrica
+        </h1>
+    Peso por metro cubico: <input id="peso" type="number">
+
+    <button onclick="go()">
+        Cotizar
+    </button>
+
+    <br>
+    <br>
+    <h1 id="precio"> </h1>
+    <p id="error"> </p>
+
+    <script>
+        var inputT = document.getElementById("precio");
+        var pesoV = document.querySelector("input");
+        var txterror =document.getElementById("error");
+
+        function go() {
+            if (pesoV.value>0){
+            inputT.innerHTML = "El costo seria de " + pesoV.value*200  + " soles + IGV";
+            }
+
+            //if(document.getElementById("peso").value==""){
+              //txterror.innerHTML="Debe rellenar el campo de peso";
+            //}
+
+        }
+
+    </script>
+</body>
+</html>

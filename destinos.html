@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p>Selecciona tu lugar de origen</p>
+
+<select id="Origen">
+  <option>Lima</option>
+  <option>Quillabamba</option>
+</select>
+
+<p>Selecciona tu lugar de destino</p>
+
+<select id="Destino">
+  <option>Lima</option>
+  <option>Quillabamba</option>
+  <option>Cusco</option>
+  <option>Urubamba</option>
+</select>
+
+
+<button onclick="myFunction()">Cotizar</button>
+<p id="precio"></p>
+<script>
+function myFunction() {
+
+
+if(document.getElementById("Origen").selectedIndex == "0" && document.getElementById("Destino").selectedIndex == "0"){
+  precio.innerHTML = " 150 Soles";
+}
+if(document.getElementById("Origen").selectedIndex == "0" && document.getElementById("Destino").selectedIndex == "1"){
+  precio.innerHTML = "200 Soles";
+}
+if(document.getElementById("Origen").selectedIndex == "0" && document.getElementById("Destino").selectedIndex == "2"){
+  precio.innerHTML = "200 Soles";
+}
+if(document.getElementById("Origen").selectedIndex == "0" && document.getElementById("Destino").selectedIndex == "3"){
+  precio.innerHTML = "200 Soles";
+}
+if(document.getElementById("Origen").selectedIndex == "1" && document.getElementById("Destino").selectedIndex == "1"){
+  precio.innerHTML = "100 Soles";
+}
+if(document.getElementById("Origen").selectedIndex == "1" && document.getElementById("Destino").selectedIndex == "0"){
+  precio.innerHTML = "200 Soles";
+}
+if(document.getElementById("Origen").selectedIndex == "1" && document.getElementById("Destino").selectedIndex == "2"){
+  precio.innerHTML = "200 Soles";
+}
+if(document.getElementById("Origen").selectedIndex == "1" && document.getElementById("Destino").selectedIndex == "3"){
+  precio.innerHTML = "200 Soles";
+}
+
+
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+      Cotizador de cajas
+    </title>
+</head>
+
+<body style="text-align:center;" id="body">
+  <div>
+    <h1 style="color:green;">
+            Cotizador de cajas
+        </h1>
+    Ancho: <input class="ancho" type="number" required>
+    Largo: <input class="largo" type="number" required>
+    Alto: <input class="alto" type="number" required>
+    Peso en kg: <input class="peso" type="number" required>
+
+    <button onclick="go()">
+        Cotizar
+    </button>
+    <button onClick="refrescar()">actualizar</button>
+
+
+    <br>
+    <br>
+    <h1 id="tipo"> </h1>
+    <h1 id="precio"> </h1>
+    <p id="errorAncho"> </p>
+    <p id="errorLargo"> </p>
+    <p id="errorAlto"> </p>
+    <p id="errorPeso"> </p>
+
+
+</div>
+    <script>
+        var inputTipo = document.getElementById("tipo");
+        var inputPrecio = document.getElementById("precio");
+        var AnchoC = document.querySelector(".ancho");
+        var LargoC = document.querySelector(".largo");
+        var AltoC = document.querySelector(".alto");
+        var PesoC = document.querySelector(".peso");
+        var errorAn =document.getElementById("errorAncho");
+        var errorLa =document.getElementById("errorLargo");
+        var errorAl =document.getElementById("errorAlto");
+        var errorPe =document.getElementById("errorPeso");
+
+        function go() {
+          if (AnchoC.value<=23 && AnchoC.value>0 && PesoC.value<30 && PesoC.innerHTML.length>0){
+          inputTipo.innerHTML = "Caja Chica";
+          inputPrecio.innerHTML = "El costo es de 20 soles incluido IGV";
+          }
+          if (LargoC.value<=18 && LargoC.value>0 && PesoC.value<30 && PesoC.innerHTML.length>0){
+            inputTipo.innerHTML = "Caja Chica";
+            inputPrecio.innerHTML = "El costo es de 20 soles incluido IGV";
+          }
+          if (AltoC.value<=18 && AltoC.value>0 && PesoC.value<30 && PesoC.innerHTML.length>0){
+            inputTipo.innerHTML = "Caja Chica";
+            inputPrecio.innerHTML = "El costo es de 20 soles incluido IGV";
+          }
+
+          if(PesoC.value<=15 && PesoC.value>0){
+            inputTipo.innerHTML = "Caja Chica";
+            inputPrecio.innerHTML = "El costo es de 20 soles incluido IGV";
+          }
+
+
+
+          if (AnchoC.value<=40 && AnchoC.value>23 && PesoC.value<30 && PesoC.innerHTML.length>0){
+            inputTipo.innerHTML = "Caja Mediana";
+            inputPrecio.innerHTML = "El costo es de 25 soles incluido IGV";
+            }
+          if (LargoC.value <=40 && LargoC.value>18 && PesoC.value<30 && PesoC.innerHTML.length>0){
+            inputTipo.innerHTML = "Caja Mediana";
+            inputPrecio.innerHTML = "El costo es de 25 soles incluido IGV";
+          }
+
+          if (AltoC.value<=40 && AltoC.value>18 && PesoC.value<30 && PesoC.innerHTML.length>0){
+            inputTipo.innerHTML = "Caja Mediana";
+            inputPrecio.innerHTML = "El costo es de 25 soles incluido IGV";
+            }
+
+            if(PesoC.value<=20 && PesoC.value>15){
+            inputTipo.innerHTML = "Caja Mediana";
+            inputPrecio.innerHTML = "El costo es de 25 soles incluido IGV";
+            }
+
+
+          if (AnchoC.value <=55 && AnchoC.value>40 && PesoC.value<30 && PesoC.innerHTML.length>0){
+            inputTipo.innerHTML = "Caja Grande";
+            inputPrecio.innerHTML = "El costo es de 30 soles incluido IGV"
+            }
+            if (LargoC.value <=45 && LargoC.value>40 && PesoC.value<30 && PesoC.innerHTML.length>0){
+              inputTipo.innerHTML = "Caja Grande";
+              inputPrecio.innerHTML = "El costo es de 30 soles incluido IGV";
+            }
+
+          if (AltoC.value <=64 && AltoC.value>40 && PesoC.value<30 && PesoC.innerHTML.length>0){
+              inputTipo.innerHTML = "Caja Grande";
+              inputPrecio.innerHTML = "El costo es de 30 soles incluido IGV"
+              }
+
+              if(PesoC.value<=30 && PesoC.value>20){
+                inputTipo.innerHTML = "Caja Grande";
+                inputPrecio.innerHTML = "El costo es de 30 soles incluido IGV";
+              }
+
+
+
+          if(AnchoC.value>55){
+            errorAn.innerHTML = "No puede poner un ancho mayor a 55cm"
+          }
+
+          if(LargoC.value>45){
+            errorLa.innerHTML = "No puede poner un largo mayor a 45cm"
+          }
+
+          if(AltoC.value>64){
+            errorAl.innerHTML = "No puede poner un largo mayor a 64cm"
+          }
+          if(PesoC.value>30){
+            errorPe.innerHTML = "No puede poner un peso mayor a 30kg"
+          }
+
+
+          if(document.querySelector(".ancho").value ==""){
+            errorAn.innerHTML = "Tiene que rellenar el campo de ancho"
+          }
+
+          if(document.querySelector(".largo").value ==""){
+            errorLa.innerHTML = "Tiene que rellenar el campo de largo"
+          }
+
+          if(document.querySelector(".alto").value ==""){
+            errorAl.innerHTML = "Tiene que rellenar el campo de alto"
+          }
+
+          if(document.querySelector(".peso").value ==""){
+            errorPe.innerHTML = "Tiene que rellenar el campo de peso"
+          }
+
+        }
+
+      function refrescar() {
+
+        inputTipo.innerHTML="";
+        inputPrecio.innerHTML="";
+        errorAl.innerHTML="";
+        errorAn.innerHTML="";
+        errorPe.innerHTML="";
+        errorLa.innerHTML="";
+
+      }
+    </script>
+</body>
+</html>

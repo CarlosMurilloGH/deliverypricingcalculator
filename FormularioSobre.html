@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+      Cotizador de sobres
+    </title>
+</head>
+
+<body style="text-align:center;" id="body">
+    <h1 style="color:green;">
+            Cotizador de sobres
+        </h1>
+    Peso: <input id="peso" type="number" min="1" max="1500">
+
+    <button onclick="go()">
+        Cotizar
+    </button>
+
+    <br>
+    <br>
+    <h1 id="tipo"> </h1>
+    <p id="error"> </p>
+
+    <script>
+        var inputT = document.getElementById("tipo");
+        var pesoSobre = document.querySelector("input");
+        var txterror =document.getElementById("error");
+
+        function go() {
+            if (pesoSobre.value<500 && pesoSobre.value>0){
+            inputT.innerHTML = " Sobre chico";
+            }
+            else if (pesoSobre.value<1000 && pesoSobre.value>500){
+              inputT.innerHTML = " Sobre mediano ";
+            }
+            else if (pesoSobre.value<1500 && pesoSobre.value>1000){
+              inputT.innerHTML = " Sobre Grande";
+            }
+            else if (pesoSobre.value>1500){
+              inputT.innerHTML = " Error";
+              txterror.innerHTML = "No se puede poner un peso mayor a 1500 ";
+            }
+
+        }
+
+    </script>
+</body>
+</html>
